@@ -89,5 +89,6 @@ Route::post('/adicionar/condicao',array(
 	'uses' => 'CondicaoController@postInserirCondicao',
 ));
 
+Route::post('upload','TagController@upload');
 
 

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Tag;
+use Storage;
+use Illuminate\Support\Facades\Input;
 
 class TagController extends Controller
 {
@@ -18,7 +20,8 @@ class TagController extends Controller
 
     	$tag->save();
     	$tags = Tag::all();
-
+       
+        
 
     	return view ('tag\homeTag',array('tags'=>$tags));
     }
@@ -34,5 +37,14 @@ class TagController extends Controller
 		return view('tag\adicionarTag');
 	}
 
+
+    public function upload(Request $request){
+        Storage::disk('local')->makeDirectory('/23');//.$request->user()->id
+        
+        if(Input::hasFile('file')){
+            $file = Input::file('file');
+            $file->move('.././storage/app/'.$request->user()->id,$file->getClientOriginalName());
+        }
+    }
 	
 }
