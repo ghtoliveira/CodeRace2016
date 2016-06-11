@@ -1,5 +1,5 @@
 <?php
-//Teste commit
+//Teste commit 3
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
