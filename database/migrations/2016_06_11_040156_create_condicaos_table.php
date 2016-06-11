@@ -14,6 +14,7 @@ class CreateCondicaosTable extends Migration
     {
         Schema::create('condicaos', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('descricao');
             $table->timestamps();
         });
     }
