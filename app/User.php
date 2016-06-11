@@ -32,4 +32,8 @@ class User extends Authenticatable
     public function endereco(){
         return $this->hasOne('App\Endereco');
     }
+
+    public function ofertas(){
+        return $this->hasMany('App\Oferta', 'userId');
+    }
 }

@@ -17,4 +17,8 @@ class Produto extends Model
     public function condicao(){
         return $this->hasOne('App\Condicao');
     }
+
+    public function ofertas(){
+        return $this->belongsToMany('App\Oferta', 'ofertaProduto', 'produtoId', 'ofertaId');
+    }
 }

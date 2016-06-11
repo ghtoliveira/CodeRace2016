@@ -28,3 +28,18 @@ Route::get('/adicionar/novoProduto', array(
     'as' => 'getAdicionarProduto',
     'uses' => 'ProdutoController@getInserirProduto',
 ));
+
+Route::get('/oferta/adicionar', array(
+    'as' => 'getAdicionarOferta',
+    'uses' => 'OfertaController@getAdicionarOferta'
+));
+
+Route::post('/oferta/adicionarNova', array(
+   'as' => 'postAdicionarOferta',
+    'uses' => 'OfertaController@postAdicionarOferta'
+));
+
+Route::get('/usuario/ofertas', array(
+   'as' => 'getUsuarioOfertas',
+    'uses' => 'UsuarioController@getListarOfertas'
+));
