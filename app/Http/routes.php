@@ -20,11 +20,11 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 Route::post('/adicionar/produto', array(
-    'as' => 'adicionarProduto',
+    'as' => 'postAdicionarProduto',
     'uses' => 'ProdutoController@postInserirProduto',
 ));
 
 Route::get('/adicionar/novoProduto', array(
-    'as' => 'adicionarNovoProduto',
+    'as' => 'getAdicionarProduto',
     'uses' => 'ProdutoController@getInserirProduto',
 ));
