@@ -23,4 +23,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    public function produtos(){
+        return $this->hasMany('App\Produto');
+    }
+
+    public function endereco(){
+        return $this->hasOne('App\Endereco');
+    }
 }

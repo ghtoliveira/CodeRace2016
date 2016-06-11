@@ -18,3 +18,13 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::post('/adicionar/produto', array(
+    'as' => 'adicionarProduto',
+    'uses' => 'ProdutoController@postInserirProduto',
+));
+
+Route::get('/adicionar/novoProduto', array(
+    'as' => 'adicionarNovoProduto',
+    'uses' => 'ProdutoController@getInserirProduto',
+));
