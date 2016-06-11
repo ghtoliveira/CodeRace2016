@@ -29,7 +29,7 @@ Route::get('/adicionar/novoProduto', array(
     'uses' => 'ProdutoController@getInserirProduto',
 ));
 
-<<<<<<< HEAD
+
 Route::get('/oferta/adicionar', array(
     'as' => 'getAdicionarOferta',
     'uses' => 'OfertaController@getAdicionarOferta'
@@ -44,7 +44,7 @@ Route::get('/usuario/ofertas', array(
    'as' => 'getUsuarioOfertas',
     'uses' => 'UsuarioController@getListarOfertas'
 ));
-=======
+
 
 // Tags
 Route::get('/tag/home',array(
@@ -80,4 +80,4 @@ Route::post('/adicionar/condicao',array(
 ));
 
 
->>>>>>> origin/master
+
