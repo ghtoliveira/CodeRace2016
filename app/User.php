@@ -26,7 +26,7 @@ class User extends Authenticatable
 
 
     public function produtos(){
-        return $this->hasMany('App\Produto');
+        return $this->hasMany('App\Produto', 'userId');
     }
 
     public function endereco(){

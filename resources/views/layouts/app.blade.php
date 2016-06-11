@@ -50,15 +50,16 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Nome
-                </a>
+                <a class="navbar-brand" href="{{ url('/') }}">Nome</a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/usuario/ofertas') }}">Minhas Ofertas</a></li>
+                    <li><a href="{{ url('/oferta/adicionar') }}">Adicionar Oferta</a></li>
+                    <li><a href="{{ url('/produto/adicionar') }}">Adicionar Produto</a></li>
                     <li>
                     <form class="form-group" action="index.html" method="post">
                       <input type="text" name="busca" placeholder="">

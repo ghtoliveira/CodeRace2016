@@ -19,12 +19,12 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::post('/adicionar/produto', array(
+Route::post('/produto/adicionarNovo', array(
     'as' => 'postAdicionarProduto',
     'uses' => 'ProdutoController@postInserirProduto',
 ));
 
-Route::get('/adicionar/novoProduto', array(
+Route::get('/produto/adicionar', array(
     'as' => 'getAdicionarProduto',
     'uses' => 'ProdutoController@getInserirProduto',
 ));
@@ -38,6 +38,16 @@ Route::get('/oferta/adicionar', array(
 Route::post('/oferta/adicionarNova', array(
    'as' => 'postAdicionarOferta',
     'uses' => 'OfertaController@postAdicionarOferta'
+));
+
+Route::get('/oferta/listarRelacionadas/{id}', array(
+   'as' => 'getListarRelacionadas',
+    'uses' => 'OfertaController@getListarRelacionadas'
+));
+
+Route::get('/oferta/detalhe/{id}', array(
+    'as' => 'getOfertaDetalhe',
+    'uses' => 'OfertaController@getOfertaDetalhe'
 ));
 
 Route::get('/usuario/ofertas', array(

@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2"> <!--<div class="col-md-10 col-md-offset-1">-->
                 <div class="jumbotron panel-default centered">
-                    <h3>Adicionar Produto</h3>
+                    <h3>Adicionar Oferta</h3>
 
                     <div class="padded">
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('postAdicionarOferta') }}">
@@ -38,6 +38,10 @@
                             <div class="form-group padded-top">
                                 <label for="titulo">Titulo da sua Oferta</label>
                                 <input type="text" name="titulo" class="form-control" id="titulo" placeholder="Titulo">
+                            </div>
+                            <div class="form-group padded-top">
+                                <label for="valorMinimo">Valor do(s) produto(s)</label>
+                                <input type="number" name="valor" class="form-control" id="valor" placeholder="200">
                             </div>
                             <div class="form-group padded-top">
                                 <label for="valorMinimo">Valor minimo de interesse</label>
@@ -48,9 +52,25 @@
                                 <input type="number" name="valorMaximo" class="form-control" id="valorMaximo" placeholder="300">
                             </div>
 
-                            <div class="form-group padded-top">
-                                <input type="number" name="produtoId" class="form-control" id="produtoId" placeholder="300">
-                            </div>
+                            <h2>Produto(s) da Oferta </h2>
+
+                            @foreach($produtos as $produto)
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="produtos[]" value="{{ $produto->id }}"> {{  $produto->nome }}
+                                    </label>
+                                </div>
+                            @endforeach
+
+                            <h2> Categoria(s) </h2>
+
+                            @foreach($categorias as $categoria)
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="categoriaId[]" value="{{ $categoria->id }}"> {{  $categoria->descricao }}
+                                    </label>
+                                </div>
+                            @endforeach
 
 
                             <div class="form-group padded-top">
@@ -58,6 +78,8 @@
                                     <button type="submit" class="btn btn-success btn-group-justified padded">Adicionar Oferta</button> <!--ORIGINAL btn btn-default-->
                                 </div>
                             </div>
+
+
 
                         </form>
                     </div>

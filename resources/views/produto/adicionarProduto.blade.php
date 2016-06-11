@@ -36,12 +36,15 @@
                         <form class="form-horizontal" role="form" method="POST" action="{{ route('postAdicionarProduto') }}">
                             {!! csrf_field() !!}
                             <div class="form-group padded-top">
+                                <label for="nome">Nome do produto</label>
                                 <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome">
                             </div>
                             <div class="form-group padded-top">
+                                <label for="valor">Valor do Produto</label>
                                 <input type="number" name="valor" class="form-control" id="valor" placeholder="10">
                             </div>
                             <div class="form-group padded-top">
+                                <label for="descricao">Descricao do Produto</label>
                                 <input type="text" name="descricao" class="form-control" id="descricao" placeholder="Produto pouco utilizado, em ótimo estado">
                             </div>
 
@@ -63,7 +66,6 @@
                                     <select class="form-control" id="tag" name="categoria">
                                         @foreach($categorias as $categoria)
                                             <option>{{ $categoria->descricao }}</option>
-
                                         @endforeach
                                     </select>
                                 </div>

@@ -13,4 +13,13 @@ class Oferta extends Model
     public function usuario(){
         return $this->belongsTo('App\User');
     }
+    
+    public function categorias(){
+        return $this->belongsToMany('App\Oferta','ofertaCategoria', 'ofertaId', 'categoriaId');
+    }
+
+    public function categoriasRelacionadas(){
+        
+    }
+
 }
