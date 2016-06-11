@@ -23,6 +23,17 @@
         .fa-btn {
             margin-right: 6px;
         }
+
+        .centered{
+          text-align: center;
+        }
+
+        .fundo{
+          background-image: url(http://www.consumocolaborativo.blog.br/wp-content/uploads/2015/07/troca-de-servi%C3%A7o.jpg);
+          background-size:cover;
+    			background-position:center;
+          opacity: 0.4;
+        }
     </style>
 </head>
 <body id="app-layout">
@@ -40,7 +51,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
+                    Nome
                 </a>
             </div>
 
@@ -48,6 +59,13 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li>
+                    <form class="form-group" action="index.html" method="post">
+                      <input type="text" name="busca" placeholder="">
+
+                      <button type="button" name="button" class="btn btn-info form-group centered"><span class="glyphicon glyphicon-search"></span> Buscar</button>
+                    </form>
+                    </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -71,8 +89,11 @@
             </div>
         </div>
     </nav>
+    
+    <div class="">
+      @yield('content')
+    </div>
 
-    @yield('content')
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
